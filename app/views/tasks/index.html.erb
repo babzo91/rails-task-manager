@@ -1,9 +1,7 @@
-<div>
-  <ol>
+<div class="container">
     <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %> <%= link_to "delete?", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+    <li class="card"><%= link_to task.title, task_path(task) %> <%= link_to "delete?", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
     <% end %>
-  </ol>
 
   <%= link_to "Add a new task", new_task_path(@task) %>
 </div>
